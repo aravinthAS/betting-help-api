@@ -23,3 +23,11 @@ jobs:
         distribution: 'adopt'
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Create docker image
+      shell: bash
+      run: docker build . -t aravinthas/betting-help-api:${GITHUB_SHA::8}
+    - name: Push docker image
+      if: github.ref == 'refs/heads/master'
+      shell: bash
+      run: |
+        docker push aravinthas/betting-help-api:${GITHUB_SHA::8}
