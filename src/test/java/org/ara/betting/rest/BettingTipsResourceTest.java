@@ -3,6 +3,8 @@ package org.ara.betting.rest;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
+import javax.ws.rs.core.MediaType;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 
@@ -12,10 +14,12 @@ public class BettingTipsResourceTest {
     @Test
     public void testHelloEndpoint() {
         given()
-          .when().get("/betting")
-          .then()
-             .statusCode(200)
-             .body(is("Welcome to betting help"));
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON)
+                .when()
+                .get("/betting/1/34/79")
+                .then()
+                .statusCode(200);
     }
 
 }

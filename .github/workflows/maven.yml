@@ -27,7 +27,7 @@ jobs:
       shell: bash
       run: docker build . -t aravinthas/betting-help-api:${GITHUB_SHA::8}
     - name: Push docker image
-      if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/main'
       shell: bash
       run: |
         docker push aravinthas/betting-help-api:${GITHUB_SHA::8}
