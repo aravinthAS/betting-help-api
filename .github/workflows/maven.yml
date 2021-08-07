@@ -30,4 +30,4 @@ jobs:
       if: github.ref == 'refs/heads/main'
       shell: bash
       run: |
-        docker push docker.io/aravinthas/betting-help-api:${GITHUB_SHA::8}
+        docker push aravinthas/betting-help-api:${GITHUB_SHA::8}
