@@ -20,7 +20,7 @@ public class BettingTipsResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @Path("/{fromNumber}/{toNumber}/{antallNumber}")
+    @Path("random-numbers/{fromNumber}/{toNumber}/{antallNumber}")
     public Response getBettingNumberRandom(
             @PathParam("fromNumber") int fromNumber,
             @PathParam("toNumber") int toNumber,

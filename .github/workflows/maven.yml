@@ -25,9 +25,9 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Create docker image
       shell: bash
-      run: docker build . -t aravinthas/betting-help-api:${GITHUB_SHA::8}
+      run: docker build -t docker.io/aravinthas/betting-help-api:${GITHUB_SHA::8} .
     - name: Push docker image
       if: github.ref == 'refs/heads/main'
       shell: bash
       run: |
-        docker push aravinthas/betting-help-api:${GITHUB_SHA::8}
+        docker push docker.io/aravinthas/betting-help-api:${GITHUB_SHA::8}

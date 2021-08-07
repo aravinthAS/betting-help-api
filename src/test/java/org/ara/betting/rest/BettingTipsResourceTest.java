@@ -17,7 +17,7 @@ public class BettingTipsResourceTest {
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
                 .when()
-                .get("/betting/1/34/79")
+                .get("/betting/random-numbers/1/34/7")
                 .then()
                 .statusCode(200);
     }
